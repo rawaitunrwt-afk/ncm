@@ -15,6 +15,7 @@
         :root {
             --primary-gold: #FFD700;
             --netflix-red: #E50914;
+            --telegram-blue: #0088cc; /* Telegram အရောင် */
             --glass-bg: rgba(20, 20, 20, 0.9);
             --text-white: #ffffff;
             --text-gold: #ffecb3;
@@ -24,7 +25,7 @@
             font-family: 'Poppins', 'Padauk', sans-serif; 
             margin: 0; padding: 0; line-height: 1.6;
             
-            /* BACKGROUND IMAGE (bg.jpg ကို Local Folder မှ ယူမည်) */
+            /* BACKGROUND IMAGE */
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.jpg');
             background-repeat: no-repeat;
             background-position: center center;
@@ -55,11 +56,13 @@
         }
 
         .contact-btn { 
-            background: linear-gradient(45deg, #FFD700, #FFC107); color: black; 
-            padding: 8px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; 
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); transition: 0.3s;
+            background: linear-gradient(45deg, #0088cc, #005f8f); /* Telegram Blue Gradient */
+            color: white; 
+            padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem; 
+            box-shadow: 0 0 10px rgba(0, 136, 204, 0.4); transition: 0.3s;
+            display: flex; align-items: center; gap: 8px;
         }
-        .contact-btn:hover { transform: scale(1.05); background: white; }
+        .contact-btn:hover { transform: scale(1.05); background: white; color: #0088cc; }
 
         /* --- Tab Navigation --- */
         .tab-nav {
@@ -174,7 +177,7 @@
         <div class="logo-container">
             <img src="logo.png" alt="Netflix City Myanmar" class="logo-img" onerror="this.src='logo.jpg'; this.onerror=null;">
         </div>
-        <a href="https://m.me/netflixinmyanmar" class="contact-btn"><i class="fab fa-facebook-messenger"></i> ဆက်သွယ်ရန်</a>
+        <a href="https://t.me/NetflixCityMM" class="contact-btn"><i class="fab fa-telegram"></i> Telegram</a>
     </header>
 
     <div class="tab-nav">
@@ -201,6 +204,7 @@
                 <li><span>💯</span> ချက်ချင်းဝယ် ချက်ချင်းရ</li>
                 <li><span>💯</span> သက်တမ်းတိုးအသုံးပြုလို့ရ</li>
                 <li>
+                    <span>💳</span> 
                     <small style="color:#ccc; display:block; margin-bottom:5px;">ငွေပေးချေနိုင်သော နည်းလမ်းများ:</small>
                     KPay , WavePay , OnePay , AYAPay , OK$ , KBZ , CB , Yoma , AYA , AGD , MAB
                 </li>
@@ -208,7 +212,8 @@
 
             <div class="contact-box">
                 <p style="color:white; margin:0;">Contact us : 
-                                   <a href="tel:09782417692" class="phone-link">09 782417692</a>
+                    <a href="tel:09950965185" class="phone-link">09 950965185</a> , 
+                    <a href="tel:09782417692" class="phone-link">09 782417692</a>
                 </p>
             </div>
             
@@ -224,10 +229,10 @@
         <div class="alert-box alert-red"><strong><i class="fas fa-exclamation-triangle"></i> သတိပြုရန်:</strong> 10 ရက်တစ်ခါ အကောင့်ပြောင်းရပါမည်။ Household Lock ဖြစ်ပါက မနက်(၁၀) - ည(၁) ဖြေရှင်းပေးသည်။</div>
         
         <div class="price-grid">
-            <div class="card"><div class="plan-name">10 Days</div><div class="price">9,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-10Days" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">1 Month</div><div class="price">21,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">2 Months</div><div class="price">42,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">3 Months</div><div class="price">63,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">10 Days</div><div class="price">9,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">21,500 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">42,500 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">63,500 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
         </div>
 
         <hr style="border-color:rgba(255,255,255,0.2); margin:40px 0;">
@@ -237,28 +242,28 @@
         
         <h4 style="text-align:center; color:#ccc;">🇲🇲 Myanmar Plan</h4>
         <div class="price-grid">
-            <div class="card"><div class="plan-name">1 Month</div><div class="price">20,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">2 Months</div><div class="price">39,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">3 Months</div><div class="price">58,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">20,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">39,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">58,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
         </div>
 
         <h4 style="text-align:center; margin-top:30px; color:#ccc;">🇹🇭 Thai Plan (No VPN)</h4>
         <div class="price-grid">
-            <div class="card"><div class="plan-name">1 Month</div><div class="price">24,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">2 Months</div><div class="price">47,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
-            <div class="card"><div class="plan-name">3 Months</div><div class="price">70,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">24,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">47,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">70,000 Ks</div><a href="https://t.me/NetflixCityMM" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
         </div>
     </div>
 
-    <div id="hbo" class="tab-content"><div class="sec-title"><h2>HBO Max</h2><p>VPN မလိုပါ | Direct Watch</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">14,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-1Month" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">2 Months</div><div class="price">28,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-2Months" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">42,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-3Months" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div></div></div>
+    <div id="hbo" class="tab-content"><div class="sec-title"><h2>HBO Max</h2><p>VPN မလိုပါ | Direct Watch</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">14,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">2 Months</div><div class="price">28,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">42,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div></div></div>
     
-    <div id="disney" class="tab-content"><div class="sec-title"><h2>Disney+</h2><p>Paid VPN Required</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-1Month" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">2 Months</div><div class="price">21,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-2Months" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">32,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-3Months" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div></div></div>
+    <div id="disney" class="tab-content"><div class="sec-title"><h2>Disney+</h2><p>Paid VPN Required</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">2 Months</div><div class="price">21,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">32,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div></div></div>
     
-    <div id="prime" class="tab-content"><div class="sec-title"><h2>Prime Video</h2><p>India Region</p></div><div class="price-grid"><div class="card"><div class="plan-name">Plan A (TV)</div><div class="price">14,000 Ks</div><ul class="features"><li><i class="fas fa-tv"></i> For TV Users</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://m.me/netflixinmyanmar?text=Prime-TV" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">Plan B (Phone/PC)</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-mobile"></i> Phone/Tablet Only</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://m.me/netflixinmyanmar?text=Prime-Mobile" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div></div></div>
+    <div id="prime" class="tab-content"><div class="sec-title"><h2>Prime Video</h2><p>India Region</p></div><div class="price-grid"><div class="card"><div class="plan-name">Plan A (TV)</div><div class="price">14,000 Ks</div><ul class="features"><li><i class="fas fa-tv"></i> For TV Users</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">Plan B (Phone/PC)</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-mobile"></i> Phone/Tablet Only</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div></div></div>
     
-    <div id="spotify" class="tab-content"><div class="sec-title"><h2>Spotify Premium</h2><p>Individual Plan</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">17,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://m.me/netflixinmyanmar?text=Spotify-1Month" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">50,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://m.me/netflixinmyanmar?text=Spotify-3Months" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div></div></div>
+    <div id="spotify" class="tab-content"><div class="sec-title"><h2>Spotify Premium</h2><p>Individual Plan</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">17,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div><div class="card"><div class="plan-name">3 Months</div><div class="price">50,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div></div></div>
     
-    <div id="vless" class="tab-content"><div class="sec-title"><h2>Vless Key</h2><p>VPN Alternative</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">7,500 Ks</div><ul class="features"><li><i class="fas fa-bolt"></i> High Speed</li><li><i class="fas fa-mobile"></i> 1 Device</li></ul><a href="https://m.me/netflixinmyanmar?text=Vless-1Month" class="buy-btn">ဝယ်ယူမယ်</a></div></div></div>
+    <div id="vless" class="tab-content"><div class="sec-title"><h2>Vless Key</h2><p>VPN Alternative</p></div><div class="price-grid"><div class="card"><div class="plan-name">1 Month</div><div class="price">7,500 Ks</div><ul class="features"><li><i class="fas fa-bolt"></i> High Speed</li><li><i class="fas fa-mobile"></i> 1 Device</li></ul><a href="https://t.me/NetflixCityMM" class="buy-btn">ဝယ်ယူမယ်</a></div></div></div>
 
     <footer>
         <p>&copy; 2025 Netflix City Myanmar. All rights reserved.</p>
@@ -283,4 +288,3 @@
     </script>
 </body>
 </html>
-
