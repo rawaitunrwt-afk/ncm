@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix City Myanmar</title>
+    
+    <link rel="icon" href="logo.jpg" type="image/jpeg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- General Styles --- */
+        :root {
+            --primary-gold: #FFD700;
+            --netflix-red: #E50914;
+            --glass-bg: rgba(20, 20, 20, 0.9); /* ကတ်ပြားများကို ပိုမည်းလိုက်သည် */
+            --text-white: #ffffff;
+            --text-gold: #ffecb3;
+        }
+
+        body { 
+            font-family: 'Poppins', 'Padauk', sans-serif; 
+            margin: 0; padding: 0; line-height: 1.6;
+            
+            /* --- BACKGROUND IMAGE SETTING --- */
+            /* bg.jpg ကိုပဲ ရှာဖွေမည့် Code */
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #141414; /* ပုံမရှိလျှင် အမည်းရောင်ပြမည် */
+            
+            color: var(--text-white);
+            min-height: 100vh;
+        }
+
+        a { text-decoration: none; color: white; }
+
+        /* --- Header --- */
+        header { 
+            background: rgba(0, 0, 0, 0.95); 
+            padding: 10px 5%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            border-bottom: 2px solid var(--primary-gold);
+            height: 70px; position: sticky; top: 0; z-index: 2000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+        }
+
+        .logo-container { display: flex; align-items: center; }
+        
+        /* Logo Size Adjustment */
+        .logo-img { 
+            height: 55px; width: auto; 
+            border-radius: 5px; 
+            border: 1px solid #444;
+            background: #000;
+        }
+
+        .contact-btn { 
+            background: linear-gradient(45deg, #FFD700, #FFC107); color: black; 
+            padding: 8px 15px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; 
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.4); transition: 0.3s;
+        }
+        .contact-btn:hover { transform: scale(1.05); background: white; }
+
+        /* --- Tab Navigation --- */
+        .tab-nav {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 15px 0; white-space: nowrap; overflow-x: auto;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky; top: 70px; z-index: 1000; display: flex; padding-left: 5%;
+        }
+        .tab-nav::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            background: transparent; border: 1px solid #444;
+            color: #aaa; padding: 8px 20px; margin-right: 10px; border-radius: 25px;
+            font-size: 0.9rem; cursor: pointer; transition: 0.3s; font-family: 'Padauk', sans-serif;
+        }
+        .tab-btn:hover { border-color: var(--primary-gold); color: white; }
+        .tab-btn.active { background: var(--primary-gold); color: black; font-weight: bold; border-color: var(--primary-gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+
+        /* --- Content Area --- */
+        .tab-content { display: none; padding: 40px 5%; animation: fadeIn 0.5s ease; }
+        .tab-content.active-content { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* --- Home Tab --- */
+        .home-container { text-align: center; max-width: 800px; margin: 0 auto; }
+        .welcome-text { font-size: 2.2rem; color: var(--primary-gold); margin-bottom: 10px; text-shadow: 2px 2px 4px black; font-weight: 700; letter-spacing: 1px; }
+        
+        .service-list { 
+            list-style: none; padding: 30px; text-align: left; display: inline-block; 
+            background: rgba(0, 0, 0, 0.8); border-radius: 15px; border: 1px solid var(--primary-gold);
+            backdrop-filter: blur(5px);
+        }
+        .service-list li { font-size: 1.1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; color: white; }
+        .service-list i { color: var(--primary-gold); margin-right: 15px; width: 30px; text-align: center; }
+
+        /* --- Pricing Cards --- */
+        .sec-title h2 { font-size: 2rem; margin-bottom: 5px; color: var(--primary-gold); text-shadow: 2px 2px 4px black; }
+        .sec-title p { color: #ddd; }
+        .price-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+        .card { 
+            background: var(--glass-bg); width: 100%; max-width: 300px; padding: 25px; border-radius: 12px; 
+            border: 1px solid rgba(255, 255, 255, 0.1); transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.5); position: relative;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary-gold); }
+        
+        .plan-name { font-size: 1.1rem; font-weight: bold; color: var(--text-gold); margin-bottom: 5px; }
+        .price { font-size: 1.6rem; font-weight: bold; margin: 10px 0; color: white; }
+        .features { list-style: none; padding: 0; margin-bottom: 20px; font-size: 0.9rem; color: #ccc; text-align: left; }
+        .features li { margin-bottom: 8px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+        .features i { color: var(--primary-gold); margin-right: 8px; }
+
+        .buy-btn { 
+            display: block; width: 100%; padding: 10px 0; text-align: center; border-radius: 5px; 
+            font-weight: bold; margin-top: 15px; background: transparent; color: white; border: 1px solid white; transition: 0.3s;
+        }
+        .buy-btn:hover { background: var(--primary-gold); color: black; border-color: var(--primary-gold); }
+
+        /* Specific Button Colors */
+        .btn-netflix:hover { background: #e50914; color: white; border-color: #e50914; }
+        .btn-hbo:hover { background: #9900ff; color: white; border-color: #9900ff; }
+        .btn-disney:hover { background: #113ccf; color: white; border-color: #113ccf; }
+        .btn-spotify:hover { background: #1db954; color: black; border-color: #1db954; }
+
+        .alert-box { background: rgba(0, 0, 0, 0.8); border-left: 4px solid #ffc107; padding: 15px; margin: 20px auto; border-radius: 5px; font-size: 0.9rem; color: #ddd; max-width: 800px; }
+        .alert-red { border-left-color: #e50914; }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; border-top: 1px solid #333; margin-top: 50px; background: #000; }
+        @media (max-width: 600px) { .welcome-text { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Netflix City Myanmar" class="logo-img" 
+                 onerror="this.src='logo.jpg'; this.onerror=null;">
+        </div>
+        <a href="https://m.me/netflixinmyanmar" class="contact-btn"><i class="fab fa-facebook-messenger"></i> ဆက်သွယ်ရန်</a>
+    </header>
+
+    <div class="tab-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'home')">🏠 Home</button>
+        <button class="tab-btn" onclick="openTab(event, 'netflix')">Netflix</button>
+        <button class="tab-btn" onclick="openTab(event, 'hbo')">HBO Max</button>
+        <button class="tab-btn" onclick="openTab(event, 'disney')">Disney+</button>
+        <button class="tab-btn" onclick="openTab(event, 'prime')">Prime</button>
+        <button class="tab-btn" onclick="openTab(event, 'spotify')">Spotify</button>
+        <button class="tab-btn" onclick="openTab(event, 'vless')">Vless</button>
+    </div>
+
+    <div id="home" class="tab-content active-content">
+        <div class="home-container">
+            <div style="margin-top: 80px;"></div>
+            <h1 class="welcome-text">NETFLIX CITY MYANMAR</h1>
+            <p style="color:#eee; margin-bottom:40px; font-size:1.1rem;">Premium Streaming Services Reseller</p>
+            <ul class="service-list">
+                <li><i class="fab fa-netflix"></i> Netflix Premium Plan (4K UHD)</li>
+                <li><i class="fas fa-crown"></i> Official & Private Profiles</li>
+                <li><i class="fas fa-play-circle"></i> HBO Max, Disney+, Prime Video</li>
+                <li><i class="fab fa-spotify"></i> Spotify Premium Music</li>
+                <li><i class="fas fa-shield-alt"></i> Full Warranty & Support</li>
+            </ul>
+            <br>
+            <button onclick="document.querySelector('.tab-btn:nth-child(2)').click()" class="buy-btn" style="width:200px; margin: 40px auto; background: var(--primary-gold); color:black; border:none;">ဈေးနှုန်းများ ကြည့်ရန်</button>
+        </div>
+    </div>
+
+    <div id="netflix" class="tab-content">
+        <div class="sec-title"><h2>Netflix Packages</h2><p>ရုပ်ထွက် 4K အာမခံ | မြန်မာစာတန်းထိုး</p></div>
+        
+        <h3 style="text-align:center; color:white; margin-top:30px;">PLAN 🅰️ (TV Users)</h3>
+        <div class="alert-box alert-red"><strong><i class="fas fa-exclamation-triangle"></i> သတိပြုရန်:</strong> 10 ရက်တစ်ခါ အကောင့်ပြောင်းရပါမည်။ Household Lock ဖြစ်ပါက မနက်(၁၀) - ည(၁) ဖြေရှင်းပေးသည်။</div>
+        
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">10 Days</div><div class="price">9,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-10Days" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">21,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">42,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">63,500 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanA-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+        </div>
+
+        <hr style="border-color:rgba(255,255,255,0.2); margin:40px 0;">
+
+        <h3 style="text-align:center; color:white;">PLAN 🅱️ (Phone/PC Only)</h3>
+        <div class="alert-box" style="border-left-color: #2196F3;"><i class="fas fa-ban"></i> <strong>Strict Rule:</strong> TV/TV Box များတွင် လုံး၀ ကြည့်မရပါ။</div>
+        
+        <h4 style="text-align:center; color:#ccc;">🇲🇲 Myanmar Plan</h4>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">20,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">39,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">58,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-MM-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+        </div>
+
+        <h4 style="text-align:center; margin-top:30px; color:#ccc;">🇹🇭 Thai Plan (No VPN)</h4>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">24,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-1Month" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">47,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-2Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">70,000 Ks</div><a href="https://m.me/netflixinmyanmar?text=Netflix-PlanB-Thai-3Months" class="buy-btn btn-netflix">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+
+    <div id="hbo" class="tab-content">
+        <div class="sec-title"><h2>HBO Max</h2><p>VPN မလိုပါ | Direct Watch</p></div>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">14,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-1Month" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">28,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-2Months" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">42,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> TV/Phone/PC</li><li><i class="fas fa-check"></i> No VPN Needed</li></ul><a href="https://m.me/netflixinmyanmar?text=HBO-3Months" class="buy-btn btn-hbo">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+    
+    <div id="disney" class="tab-content">
+        <div class="sec-title"><h2>Disney+</h2><p>Paid VPN Required</p></div>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-1Month" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">2 Months</div><div class="price">21,500 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-2Months" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">32,000 Ks</div><ul class="features"><li><i class="fas fa-check"></i> 1 Profile</li><li><i class="fas fa-globe"></i> VPN Required</li></ul><a href="https://m.me/netflixinmyanmar?text=Disney-3Months" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+
+    <div id="prime" class="tab-content">
+        <div class="sec-title"><h2>Prime Video</h2><p>India Region</p></div>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">Plan A (TV)</div><div class="price">14,000 Ks</div><ul class="features"><li><i class="fas fa-tv"></i> For TV Users</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://m.me/netflixinmyanmar?text=Prime-TV" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">Plan B (Phone/PC)</div><div class="price">11,000 Ks</div><ul class="features"><li><i class="fas fa-mobile"></i> Phone/Tablet Only</li><li><i class="far fa-clock"></i> 25-30 Days</li></ul><a href="https://m.me/netflixinmyanmar?text=Prime-Mobile" class="buy-btn btn-disney">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+
+    <div id="spotify" class="tab-content">
+        <div class="sec-title"><h2>Spotify Premium</h2><p>Individual Plan</p></div>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">17,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://m.me/netflixinmyanmar?text=Spotify-1Month" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div>
+            <div class="card"><div class="plan-name">3 Months</div><div class="price">50,000 Ks</div><ul class="features"><li><i class="fas fa-music"></i> India Region</li><li><i class="fas fa-check"></i> Renewable</li></ul><a href="https://m.me/netflixinmyanmar?text=Spotify-3Months" class="buy-btn btn-spotify">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+
+    <div id="vless" class="tab-content">
+        <div class="sec-title"><h2>Vless Key</h2><p>VPN Alternative</p></div>
+        <div class="price-grid">
+            <div class="card"><div class="plan-name">1 Month</div><div class="price">7,500 Ks</div><ul class="features"><li><i class="fas fa-bolt"></i> High Speed</li><li><i class="fas fa-mobile"></i> 1 Device</li></ul><a href="https://m.me/netflixinmyanmar?text=Vless-1Month" class="buy-btn">ဝယ်ယူမယ်</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Netflix City Myanmar. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active-content");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            setTimeout(() => { document.getElementById(tabName).classList.add("active-content"); }, 10);
+            if(evt) evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
